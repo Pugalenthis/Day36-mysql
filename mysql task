@@ -1,0 +1,144 @@
+    delete a database;
+
+    DROP DATABASE `zen class`
+
+
+    CREATE DATABASE;
+
+    CREATE DATABASE `zen class`
+
+
+    1. Create tables for the above list given
+
+    CREATE TABLE `zen class`.`users` ( `id` INT(20) NOT NULL AUTO_INCREMENT , `username` VARCHAR(20) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+
+    CREATE TABLE `zen class`.`codekata` (`id` INT(20) NOT NULL AUTO_INCREMENT ,`problems_Solved` INT(100) NOT NULL,PRIMARY KEY(`id`))
+
+    CREATE TABLE  `zen class`.`attendance` (`id` INT(20) NOT NULL AUTO_INCREMENT,`attendance` INT(100) NOT NULL,PRIMARY KEY (`id`))
+
+    CREATE TABLE `zen class`.`tasks`(`id` INT(20) NOT NULL AUTO_INCREMENT,`tasks completed` INT(20) NOT NULL,PRIMARY KEY(id))
+
+    CREATE TABLE `zen class`.`company_drives`(`id` INT(20) NOT NULL AUTO_INCREMENT ,`drives_attended` INT(20) NOT NULL,PRIMARY KEY (id)) 
+
+    CREATE TABLE `zen class`.`mentors`(`id` INT(20) NOT NULL AUTO_INCREMENT,`mentor_name` VARCHAR(20) NOT NULL,PRIMARY KEY (ID))
+
+    CREATE TABLE `zen class`.`students_activated_courses`(`id` INT(20) NOT NULL AUTO_INCREMENT,`activated_courses` INT(20) NOT NULL ,PRIMARY KEY(id))
+
+    CREATE TABLE `zen class`.`courses`(`id` INT(20) NOT NULL AUTO_INCREMENT,`courses` VARCHAR(100) NOT NULL,PRIMARY KEY(id))
+
+
+
+    2. insert at least 5 rows of values in each table
+
+
+    INSERT INTO `users` (`id`,`username`) VALUES(NULL,"santhosh")
+
+    omitted column names;
+
+    INSERT INTO `users`  VALUES(NULL,"deepan")
+
+    multiple query at one time;
+
+    INSERT INTO `users` VALUES
+    (NULL,"raj"),
+    (NULL,"sathish"),
+    (NULL,"kishore");
+
+
+    INSERT INTO `attendance`
+    VALUES 
+
+    (NULL,"5"),
+    (NULL,"6"),
+    (NULL,"6"),
+    (NULL,"5"),
+    (NULL,"8")
+
+
+    INSERT INTO `codekata`
+    VALUES 
+
+    (NULL,"50"),
+    (NULL,"60"),
+    (NULL,"68"),
+    (NULL,"57"),
+    (NULL,"81")
+
+    INSERT INTO `company_drives`
+    VALUES 
+
+    (NULL,"4"),
+    (NULL,"6"),
+    (NULL,"5"),
+    (NULL,"8"),
+    (NULL,"3")
+
+
+    INSERT INTO `courses`
+    VALUES 
+
+    (NULL,"full stack"),
+    (NULL,"front end"),
+    (NULL,"mern stack"),
+    (NULL,"mean stack"),
+    (NULL,"back end")
+
+
+    INSERT INTO `mentors`
+    VALUES 
+
+    (NULL,"mohan"),
+    (NULL,"arun kumar"),
+    (NULL,"akbhar"),
+    (NULL,"ragav"),
+    (NULL,"niranjana")
+
+    INSERT INTO `students_activated_courses`
+    VALUES 
+
+    (NULL,"2"),
+    (NULL,"2"),
+    (NULL,"3"),
+    (NULL,"5"),
+    (NULL,"5")
+
+    INSERT INTO `tasks`
+    VALUES 
+
+    (NULL,"15"),
+    (NULL,"10"),
+    (NULL,"13"),
+    (NULL,"15"),
+    (NULL,"9")
+
+    3. get number problems solved in codekata by combining the users
+
+    SELECT users.username,codekata.problems_Solved FROM users INNER JOIN codekata ON users.id=codekata.id
+
+
+    4. display the no of company drives attended by a user
+
+    SELECT users.username,company_drives.drives_attended FROM users INNER JOIN company_drives ON users.id=company_drives.id
+
+    5. combine and display students_activated_courses and courses for a specific user groping them based on the course
+
+    SELECT users.username,students_activated_courses.activated_courses FROM users INNER JOIN students_activated_courses ON users.id = students_activated_courses.id GROUP BY username,activated_courses
+
+
+    6. list all the mentors
+
+    SELECT mentor_name FROM mentors
+
+
+    7. list the number of students that are assigned for a mentor
+
+    SELECT mentor_name,students_assigned FROM `mentors`
+
+
+
+
+
+
+
+
+
